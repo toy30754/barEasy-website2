@@ -55,6 +55,17 @@
 
 未嘗試繞過正式站的存取限制，亦未更動 Cloudflare 設定。請於合併部署後確認 apex 的 200、HTTP 至 HTTPS 的伺服器導向、www 導向的路徑保留，以及不存在路徑的 404。
 
+### GitHub／Cloudflare 建置檢查
+
+PR 建立後，GitHub 回報 `Workers Builds: bareasy-website2` 已完成但結果為 failure。進一步檢查可確認：
+
+- 基準 main 提交 `f31bb49026f3d391020d7d7ec9a869241179c097` 的同名建置也已失敗（build `53ca0fb2-6e7f-4e81-85c4-0deed04ba80f`）。
+- 本次網站程式提交 `961f3a5a86d184300ace0ef9f756c06e416263a0` 亦失敗（build `d9c21034-56a8-4847-8841-ca881fb58c3d`）。
+- GitHub check output 沒有錯誤文字，annotations 數量為 0，只提供代管平台連結。因此無法確定失敗原因，也不能把本地測試成功寫成 CI／部署成功。
+- 詳細日誌需至 [Cloudflare 本次建置紀錄](https://dash.cloudflare.com/af99e3fa77d6af8ee3d1bdcf6cab270d/workers/services/view/bareasy-website2/production/builds/d9c21034-56a8-4847-8841-ca881fb58c3d) 查看。未取得 Cloudflare 專案設定及日誌前，不猜測入口檔案或修改部署命令。
+
+此文件補充提交只更新驗證報告；上述結果指向已明確列出的程式提交。後續建置狀態以 GitHub PR Checks 與 Cloudflare 實際日誌為準。此問題尚未完成處理。
+
 尚未進行 Google Search Console sitemap 提交／要求索引、Google 商家同步、線上 Rich Results Test、Schema Validator、PageSpeed 或 CrUX 分析。本次 PR 不等同部署完成，也不保證任何搜尋排名。店家資料及發布日期待確認事項詳見 `SEO-PLAN.md`。
 
 ## 本次檔案範圍

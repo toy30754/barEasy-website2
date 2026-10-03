@@ -155,6 +155,7 @@ TODO 同時保留在 Highball、聚會、深夜、交通文章及 Location 的 H
 5. **GSC 與 Google 商家。** 未登入或修改帳號，尚未提交 sitemap、要求建立索引或同步 Google 商家資訊。
 6. **線上 Rich Results Test、Schema Validator、PageSpeed／CrUX。** 本次做本地結構與瀏覽器驗證，尚未完成部署網址的官方工具檢測與真實使用者 Core Web Vitals。
 7. **上線日期與現行資料。** 如合併日期不同，先同步新增文章日期，再由店家確認前述商業 TODO。
+8. **Cloudflare Workers 建置失敗。** GitHub 的 `Workers Builds: bareasy-website2` 在基準 main 提交 `f31bb49` 與本次網站程式提交 `961f3a5` 都回報 failure，並非首次在本次修改後出現。GitHub 回傳沒有錯誤文字或 annotations，只提供 Cloudflare 日誌連結；原因尚未確認，不臆測或改寫部署設定。TODO：查看 Cloudflare build log，確認建置／部署命令、入口與靜態資源設定。詳見 `SEO-VALIDATION.md`。
 
 ## 8. 第二階段建議
 
